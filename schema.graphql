@@ -1,0 +1,29 @@
+scalar GraphQlDateType
+
+type Issue {
+    id: Int
+    status: String
+    owner: String
+    created: GraphQlDateType
+    effort: Int
+    completionDate: GraphQlDateType
+    title: String
+}
+
+input IssueInputs {
+    status: String
+    owner: String
+    effort: Int
+    completionDate: GraphQlDateType
+    title: String
+}
+
+type Query { 
+    name: String,
+    issueList: [Issue]
+}
+
+type Mutation {
+    sendName(name: String): String,
+    issueAdd(issue: IssueInputs) :Issue
+}
