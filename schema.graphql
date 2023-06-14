@@ -13,6 +13,7 @@ type Issue {
 input IssueInputs {
     status: String
     owner: String
+    created: GraphQlDateType
     effort: Int
     completionDate: GraphQlDateType
     title: String
